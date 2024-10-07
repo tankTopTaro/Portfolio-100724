@@ -25,7 +25,7 @@ const Projects = () => {
   }
 
   return (
-    <section id='projects' className='border w-full max-w-[1400px] h-[100vh] m-auto py-16 px-4 relative group'>
+    <section id='projects' className='w-full max-w-[1400px] h-[100vh] m-auto py-16 px-4 relative group'>
       <div className="w-full h-full relative">
       <div className="w-full h-full absolute rounded-2xl bg-center bg-cover" style={{backgroundImage: `url(${projects[currentIndex].screenshot})`}} >
         <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-white/30 via-black/50"></div>
