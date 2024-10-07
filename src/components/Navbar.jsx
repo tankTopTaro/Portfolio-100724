@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { MdMenu, MdClose } from "react-icons/md"
+import { FaGithub } from "react-icons/fa"
 
 const Navbar = () => {
     const [nav, setNav] = useState(false)
@@ -30,6 +31,7 @@ const Navbar = () => {
                         {`/${item}`}
                     </li>
                 ))}
+                <li className="p-4 m-2 cursor-pointer"><a href="https://github.com/tankTopTaro?tab=repositories" target="_blank"><FaGithub size={30} className="rounded-full hover:bg-green-300"/></a></li>
             </ul>
 
             <div onClick={handleNav} className="block md:hidden">
