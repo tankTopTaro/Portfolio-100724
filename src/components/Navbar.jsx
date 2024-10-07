@@ -18,12 +18,15 @@ const Navbar = () => {
 
     const navItems = ['home', 'projects', 'about']
     return (
-        <div className="flex justify-between items-center h-24 w-full mx-auto px-4">
-            <h1 className="w-full text-3xl font-bold uppercase">KB</h1>
+        <div className="flex justify-between items-center h-24 w-full max-w-[1400px] mx-auto px-4">
+            <div className="relative border flex items-center justify-center">
+                <div className="bg-green-400 h-12 w-12 absolute z-1" />
+                <h1 className="absolute z-10 text-4xl text-center font-bold uppercase">KB</h1>
+            </div>
 
             <ul className="hidden md:flex">
                 {navItems.map((item) => (
-                    <li key={item} onClick={() => scrollToNav(item)} className="p-4 m-2 cursor-pointer">
+                    <li key={item} onClick={() => scrollToNav(item)} className="p-4 m-2 cursor-pointer font-semibold">
                         {`/${item}`}
                     </li>
                 ))}
