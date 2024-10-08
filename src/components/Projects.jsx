@@ -2,7 +2,6 @@ import { useState } from "react"
 import { projects } from "../constants"
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs"
 import { RxDotFilled, RxDot } from "react-icons/rx"
-import StackIcon from "tech-stack-icons"
 
 
 const Projects = () => {
@@ -31,10 +30,10 @@ const Projects = () => {
         <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-white/30 via-black/50"></div>
       </div>
       <div className="relative text-center p-6 px-6 py-14 md:px-12 top-[50%] flex flex-col items-center">
-        <a href={projects[currentIndex].link} target="_blank" className="mb-6 text-3xl w-max font-medium text-white cursor-pointer hover:text-green-500">{projects[currentIndex].title}</a>
-        <div className="mb-4">
+        <a href={projects[currentIndex].link} target="_blank" className="mb-6 text-xl md:text-3xl w-max font-medium text-white cursor-pointer hover:text-green-500">{projects[currentIndex].title}</a>
+        <div className="mb-4 flex flex-wrap items-center justify-center gap-2">
           {projects[currentIndex].description.map((n) => (
-            <StackIcon name={n} />
+            <img src={n} alt="tech-stack" width={50}/>
           ))}
         </div>
       </div>

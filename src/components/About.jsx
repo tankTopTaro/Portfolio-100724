@@ -2,12 +2,12 @@ import UnderConstruction from "./UnderConstruction"
 
 const About = () => {
   return (
-    <section id="about" className='w-full max-w-[1400px] h-[80vh] flex items-center justify-center'>
-        <div className="h-full w-[50%] relative flex items-center justify-center">
+    <section id="about" className='w-full max-w-[1400px] h-[100vh] flex items-center justify-center'>
+        <div className="h-full w-[50%] relative hidden md:flex items-center justify-center">
             <img src="/images/sober.png" alt="" className="bg-transparent z-10 absolute object-cover h-2/4 md:h-3/4 transition-all duration-300" loading="lazy"/>
             <div className="border-b-[100px] border-b-green-400 h-[25%] md:h-[50%] w-full right-0 z-0 absolute left-0 transition-all duration-300" />
         </div>
-        <div className="flex flex-col items-start justify-center w-[50%] h-full px-4">
+        <div className="flex flex-col items-start justify-center w-full md:w-[50%] h-full px-4">
           <h4 className="text-2xl font-bold mb-2">About Me</h4>
           <p className="mb-4">Hello! I'm <span>Kevin</span>, a passionate web developer from Philippines. With a keen interest in web development and software engineering, I enjoy creating websites that challenges my creativitiy.</p>
 
@@ -23,7 +23,7 @@ const About = () => {
             <li>Tailwind Css</li>
             <li>Node.Js</li>
           </ul>
-          <p className="mb-2">Currently, I'm working on creating personal projects.</p>
+          <p className="mb-4">Currently, I'm working on creating personal projects.</p>
 
           <h3 className="text-xl mb-2 font-semibold">Outside of Work</h3>
           <p>When I'm not coding, you'll find me watching animes, reading manga, and playing video games.</p>

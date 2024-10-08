@@ -11,6 +11,7 @@ const Navbar = () => {
 
     const scrollToNav = (navItem) => {
         const el = document.getElementById(navItem)
+        setNav(!nav)
 
         el.scrollIntoView({
             behavior: 'smooth'
@@ -34,35 +35,33 @@ const Navbar = () => {
                 <li className="p-4 m-2 cursor-pointer"><a href="https://github.com/tankTopTaro?tab=repositories" target="_blank"><FaGithub size={30} className="rounded-full hover:bg-green-300"/></a></li>
             </ul>
 
-            <div onClick={handleNav} className="block md:hidden">
-                <MdMenu size={20} />
-            </div>
-
-            <ul
-                className={
-                nav
-                    ? 'fixed md:hidden right-0 top-0 w-[60%] z-[999] h-full bg-blue-500 ease-in-out duration-500'
-                    : 'ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 right-[-100%]'
-                }
-            >
-                {/* Mobile Logo */}
-                <div className="flex h-24 items-center justify-between">
-                    <h1 className='w-full text-3xl font-bold m-4 uppercase'>Kevin</h1>
-                    <div onClick={handleNav} className="px-4">
-                        <MdClose size={30} />
-                    </div>
+            {nav ? (
+                <div onClick={handleNav} className="px-4 md:hidden">
+                    <MdClose size={20} />
                 </div>
+            ): (
+                <div onClick={handleNav} className="px-4 md:hidden">
+                    <MdMenu size={20} />
+                </div>
+            )}
+            
+            <ul
+                className={`fixed md:hidden right-10 top-[10%] w-[80%] z-[999] h-[calc(80vh - 96px)] bg-green-300 flex flex-col items-center py-6
+                    transition-all duration-500 ease-in-out
+                    ${nav ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+            >
+                <div className="absolute top-[-15px] right-0 w-0 h-0 border-t-[30px] border-t-transparent border-r-[40px] border-r-green-300 border-b-[10px] border-b-transparent" />
 
-                {/* Mobile Navigation Items */}
                 {navItems.map(item => (
                 <li
                     key={item}
-                    className='p-4 cursor-pointer hover:bg-[#00df9a] hover:text-white duration-300'
+                    onClick={() => scrollToNav(item)}
+                    className='p-4 cursor-pointer hover:bg-[#00df9a] hover:text-white'
                 >
-                    {item}
+                    {`/${item}`}
                 </li>
                 ))}
-                <li className="p-4 cursor-pointer hover:bg-[#00df9a] hover:text-white duration-300"><a href="https://github.com/tankTopTaro?tab=repositories" target="_blank">github</a></li>
+                <li className="p-4 cursor-pointer hover:bg-[#00df9a] hover:text-white"><a href="https://github.com/tankTopTaro?tab=repositories" target="_blank">/github</a></li>
             </ul>
         </div>
     )
